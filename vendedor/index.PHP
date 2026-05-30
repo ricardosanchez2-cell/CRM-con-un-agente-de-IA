@@ -424,18 +424,6 @@
                       <p>Productos/Servicios</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Historial de Precios/Servicios</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Metas Corporativas</p>
-                    </a>
-                  </li>
 </ul>
                  
                 </ul>
