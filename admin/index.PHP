@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CRM | Dashboard </title>
+    <title>CRM | Página principal </title>
 
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -28,7 +28,7 @@
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
-    <link rel="preload" href="./assets/css/adminlte.css" as="style" />
+    <link rel="preload" href="../assets/css/adminlte.css" as="style" />
     <!--end::Accessibility Features-->
 
     <!--begin::Fonts-->
@@ -59,7 +59,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
 
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="./assets/css/adminlte.css" />
+    <link rel="stylesheet" href="../assets/css/adminlte.css" />
     <!--end::Required Plugin(AdminLTE)-->
 
     <!-- apexcharts -->
@@ -123,7 +123,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="./assets/img/user1-128x128.jpg"
+                        src="../assets/img/user1-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -149,7 +149,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="./assets/img/user8-128x128.jpg"
+                        src="../assets/img/user8-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -175,7 +175,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="./assets/img/user3-128x128.jpg"
+                        src="../assets/img/user3-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -302,7 +302,7 @@
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img
-                  src="./assets/img/user2-160x160.jpg"
+                  src="../assets/img/user2-160x160.jpg"
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
@@ -312,7 +312,7 @@
                 <!--begin::User Image-->
                 <li class="user-header text-bg-primary">
                   <img
-                    src="./assets/img/user2-160x160.jpg"
+                    src="../assets/img/user2-160x160.jpg"
                     class="rounded-circle shadow"
                     alt="User Image"
                   />
@@ -358,7 +358,7 @@
           <a href="./index.html" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="./assets/img/AdminLTELogo.png"
+              src="../assets/img/AdminLTELogo.png"
               alt="AdminLTE Logo"
               class="brand-image opacity-75 shadow"
             />
@@ -381,72 +381,71 @@
               aria-label="Main navigation"
               data-accordion="false"
               id="navigation"
-            >
-            li class="nav-item">
-    <a href="/CRM-con-un-agente-de-IA/index.php" class="nav-link">
-      <i class="nav-icon bi bi-circle"></i>
-      <p>Página Principal</p>
+
+            <ul class="nav sidebar-menu flex-column" 
+    data-lte-toggle="treeview" 
+    role="navigation"
+    aria-label="Main navigation" 
+    data-accordion="false" 
+    id="navigation">
+    
+  <li class="nav-item menu-open">
+    <a href="#" class="nav-link active">
+      <i class="nav-icon bi bi-speedometer"></i>
+      <p>
+        Menú 
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
     </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="/CRM-con-un-agente-de-IA/index.php" class="nav-link">
+          <i class="nav-icon bi bi-circle"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index2.html" class="nav-link active">
+          <i class="nav-icon bi bi-circle"></i>
+          <p>Prospectos</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index3.html" class="nav-link">
+          <i class="nav-icon bi bi-circle"></i>
+          <p>Clientes</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index3.html" class="nav-link">
+          <i class="nav-icon bi bi-circle"></i>
+          <p>Productos/Servicios</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index3.html" class="nav-link">
+          <i class="nav-icon bi bi-circle"></i>
+          <p>Historial de Precios/Servicios</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index3.html" class="nav-link">
+          <i class="nav-icon bi bi-circle"></i>
+          <p>Metas Corporativas</p>
+        </a>
+      </li>
+    </ul>
   </li>
-   </li>
-              <li class="nav-item menu-open">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon bi bi-speedometer"></i>
-                  <p>
-                    Menú 
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-               <ul class="nav nav-treeview">
-                
+  
   <li class="nav-item">
-    <a href="/CRM-con-un-agente-de-IA/index.php" class="nav-link">
-      <i class="nav-icon bi bi-circle"></i>
-      <p>Dashboard</p>
+    <a href="./generate/theme.html" class="nav-link">
+      <i class="nav-icon bi bi-palette"></i>
+      <p>Rendimiento</p>
     </a>
   </li>
-   </li>
-                  <li class="nav-item">
-                    <a href="./index2.html" class="nav-link active">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Prospectos</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Clientes</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Productos/Servicios</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Historial de Precios/Servicios</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Metas Corporativas</p>
-                    </a>
-                  </li>
 </ul>
-                 
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="./generate/theme.html" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Rendimiento</p>
-                </a>
-              </li>
-              
+
+            
             <!--end::Sidebar Menu-->
 
             <!-- Docs CTA (bottom of sidebar) -->
@@ -752,7 +751,7 @@
                             <!-- /.direct-chat-infos -->
                             <img
                               class="direct-chat-img"
-                              src="./assets/img/user1-128x128.jpg"
+                              src="../assets/img/user1-128x128.jpg"
                               alt="message user image"
                             />
                             <!-- /.direct-chat-img -->
@@ -774,7 +773,7 @@
                             <!-- /.direct-chat-infos -->
                             <img
                               class="direct-chat-img"
-                              src="./assets/img/user3-128x128.jpg"
+                              src="../assets/img/user3-128x128.jpg"
                               alt="message user image"
                             />
                             <!-- /.direct-chat-img -->
@@ -792,7 +791,7 @@
                             <!-- /.direct-chat-infos -->
                             <img
                               class="direct-chat-img"
-                              src="./assets/img/user1-128x128.jpg"
+                              src="../assets/img/user1-128x128.jpg"
                               alt="message user image"
                             />
                             <!-- /.direct-chat-img -->
@@ -814,7 +813,7 @@
                             <!-- /.direct-chat-infos -->
                             <img
                               class="direct-chat-img"
-                              src="./assets/img/user3-128x128.jpg"
+                              src="../assets/img/user3-128x128.jpg"
                               alt="message user image"
                             />
                             <!-- /.direct-chat-img -->
@@ -832,7 +831,7 @@
                               <a href="#">
                                 <img
                                   class="contacts-list-img"
-                                  src="./assets/img/user1-128x128.jpg"
+                                  src="../assets/img/user1-128x128.jpg"
                                   alt="User Avatar"
                                 />
 
@@ -853,7 +852,7 @@
                               <a href="#">
                                 <img
                                   class="contacts-list-img"
-                                  src="./assets/img/user7-128x128.jpg"
+                                  src="../assets/img/user7-128x128.jpg"
                                   alt="User Avatar"
                                 />
 
@@ -872,7 +871,7 @@
                               <a href="#">
                                 <img
                                   class="contacts-list-img"
-                                  src="./assets/img/user3-128x128.jpg"
+                                  src="../assets/img/user3-128x128.jpg"
                                   alt="User Avatar"
                                 />
 
@@ -891,7 +890,7 @@
                               <a href="#">
                                 <img
                                   class="contacts-list-img"
-                                  src="./assets/img/user5-128x128.jpg"
+                                  src="../assets/img/user5-128x128.jpg"
                                   alt="User Avatar"
                                 />
 
@@ -910,7 +909,7 @@
                               <a href="#">
                                 <img
                                   class="contacts-list-img"
-                                  src="./assets/img/user6-128x128.jpg"
+                                  src="../assets/img/user6-128x128.jpg"
                                   alt="User Avatar"
                                 />
 
@@ -929,7 +928,7 @@
                               <a href="#">
                                 <img
                                   class="contacts-list-img"
-                                  src="./assets/img/user8-128x128.jpg"
+                                  src="../assets/img/user8-128x128.jpg"
                                   alt="User Avatar"
                                 />
 
@@ -998,7 +997,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user1-128x128.jpg"
+                              src="../assets/img/user1-128x128.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1012,7 +1011,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user1-128x128.jpg"
+                              src="../assets/img/user1-128x128.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1026,7 +1025,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user7-128x128.jpg"
+                              src="../assets/img/user7-128x128.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1040,7 +1039,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user6-128x128.jpg"
+                              src="../assets/img/user6-128x128.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1054,7 +1053,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user2-160x160.jpg"
+                              src="../assets/img/user2-160x160.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1068,7 +1067,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user5-128x128.jpg"
+                              src="../assets/img/user5-128x128.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1082,7 +1081,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user4-128x128.jpg"
+                              src="../assets/img/user4-128x128.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1096,7 +1095,7 @@
                           <div class="col-3 p-2">
                             <img
                               class="img-fluid rounded-circle"
-                              src="./assets/img/user3-128x128.jpg"
+                              src="../assets/img/user3-128x128.jpg"
                               alt="User Image"
                             />
                             <a
@@ -1417,7 +1416,7 @@
                       <div class="d-flex border-top py-2 px-1">
                         <div class="col-2">
                           <img
-                            src="./assets/img/default-150x150.png"
+                            src="../assets/img/default-150x150.png"
                             alt="Product Image"
                             class="img-size-50"
                           />
@@ -1434,7 +1433,7 @@
                       <div class="d-flex border-top py-2 px-1">
                         <div class="col-2">
                           <img
-                            src="./assets/img/default-150x150.png"
+                            src="../assets/img/default-150x150.png"
                             alt="Product Image"
                             class="img-size-50"
                           />
@@ -1453,7 +1452,7 @@
                       <div class="d-flex border-top py-2 px-1">
                         <div class="col-2">
                           <img
-                            src="./assets/img/default-150x150.png"
+                            src="../assets/img/default-150x150.png"
                             alt="Product Image"
                             class="img-size-50"
                           />
@@ -1472,7 +1471,7 @@
                       <div class="d-flex border-top py-2 px-1">
                         <div class="col-2">
                           <img
-                            src="./assets/img/default-150x150.png"
+                            src="../assets/img/default-150x150.png"
                             alt="Product Image"
                             class="img-size-50"
                           />
@@ -1538,7 +1537,7 @@
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="./assets/js/adminlte.js"></script>
+    <script src="../assets/css/adminlte.js"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
