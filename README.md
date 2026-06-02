@@ -1,2 +1,0 @@
-# CRM-con-un-agente-de-IA
-Este es el branch del login, en donde se creará la lógica de gegocios que deberia hacer un login con sus respectivas subcarpetas para tener una seguridad al iniciar y proteger la base de datos y la integridad de la página.
