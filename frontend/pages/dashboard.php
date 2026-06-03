@@ -29,7 +29,7 @@ else                        { $semaforo = 'rojo';     $msg = 'NECESITAS MEJORAR'
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
 
@@ -239,7 +239,6 @@ else                        { $semaforo = 'rojo';     $msg = 'NECESITAS MEJORAR'
   </div><!-- /main -->
 </div><!-- /layout -->
 
-<script src="assets/js/app.js"></script>
 <script>
 const PHP = {
   noAgendados: <?= $prospectos_hoy['no_agendados'] ?>,
@@ -252,5 +251,8 @@ const PHP = {
   semaforo:    '<?= $semaforo ?>'
 };
 </script>
+<!-- movemos el SRC un poco despues de el const para que pueda cargar lo siguiente sin problemas -->
+<script src="../js/dashboard.js"></script>
+
 </body>
 </html>

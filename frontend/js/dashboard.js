@@ -1,5 +1,5 @@
 /* ============================================================
-   app.js  — CRM Dashboard
+   dashboard.js  — CRM Dashboard
    ============================================================ */
 
 // ── SIDEBAR TOGGLE ──────────────────────────────────────────
@@ -33,7 +33,7 @@ links.forEach(link => {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     const target = document.getElementById('sec-' + sec);
     if (target) target.classList.add('active');
-    // Inicializar chart de rendimiento cuando se activa
+    // Inicializar chart de rendimiento cuando se activa //
     if (sec === 'rendimiento' && !rendChartInit) initRendChart();
   });
 });
