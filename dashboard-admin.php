@@ -5,7 +5,6 @@ $usuario = [
     'rol' => 'Administrador'
 ];
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -75,16 +74,20 @@ $usuario = [
     <i class="fas fa-users"></i>
     Prospectos
 </a>
+<a href="vendedores-admin.php" class="sb-link">
+    <i class="fas fa-user-tie"></i>
+    Vendedor
+</a>
 
             <a href="#" class="sb-link">
                 <i class="fas fa-handshake"></i>
                 Clientes
             </a>
 
-            <a href="#" class="sb-link">
-                <i class="fas fa-box"></i>
-                Productos / Servicios
-            </a>
+            <a href="#" class="sb-link" onclick="mostrarProductos()">
+    <i class="fas fa-box"></i>
+    Productos / Servicios
+</a>
 
             <a href="#" class="sb-link">
                 <i class="fas fa-money-bill-wave"></i>
@@ -119,9 +122,6 @@ $usuario = [
     <i class="fas fa-arrow-left" id="toggleIcon"></i>
     <span id="toggleLabel">Ocultar menú</span>
 </button>
-<h1 style="color:red;font-size:50px;">
-PRUEBAAAAA
-</h1>
             <div class="topbar-l">
                 <h1 class="company">
                     NOMBRE DE LA EMPRESA
@@ -136,6 +136,140 @@ PRUEBAAAAA
 
         <!-- CONTENIDO -->
         <div class="content-inner">
+            
+            <!-- SECCIÓN PRODUCTOS -->
+<div id="productosSection" class="section">
+
+    <h2 class="section-title">
+        Productos / Servicios
+    </h2>
+
+    <div class="card">
+
+        <div class="productos-top">
+
+            <input
+                type="text"
+                id="buscarProducto"
+                placeholder="Buscar por nombre">
+
+            <button class="btn-logout" onclick="mostrarCrearProducto()">
+                Crear Producto / Servicio
+            </button>
+
+        </div>
+
+        <div class="productos-filtros">
+
+            <button class="btn-logout" onclick="filtrarProductos('todos')">
+                Todos
+            </button>
+
+            <button class="btn-logout" onclick="filtrarProductos('activos')">
+                Activos
+            </button>
+
+            <button class="btn-logout" onclick="filtrarProductos('inactivos')">
+                No Activos
+            </button>
+
+        </div>
+
+        <table class="tabla-productos">
+
+    <thead>
+        <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+
+    <tbody id="productosBody">
+    </tbody>
+
+</table>
+
+<div class="acciones-productos">
+
+    <button class="btn-logout">
+        Editar
+    </button>
+
+    <button class="btn-logout">
+        Activar
+    </button>
+
+    <button class="btn-logout">
+        Desactivar
+    </button>
+
+    <button class="btn-logout">
+        Eliminar
+    </button>
+
+</div>
+
+    </div>
+
+</div>
+<div id="crearProductoSection" class="section">
+
+    <h2 class="section-title">
+        Crear Producto / Servicio
+    </h2>
+
+    <div class="card">
+
+        <div class="form-producto">
+
+            <input
+                type="text"
+                id="nombreProducto"
+                placeholder="Nombre">
+
+            <textarea
+                id="descripcionProducto"
+                placeholder="Descripción"></textarea>
+
+            <input
+                type="number"
+                id="valorProducto"
+                placeholder="Valor">
+
+            <select id="tipoProducto">
+
+                <option value="Producto">
+                    Producto
+                </option>
+
+                <option value="Servicio">
+                    Servicio
+                </option>
+
+            </select>
+
+            <div class="modal-btns">
+
+                <button onclick="volverProductos()">
+                    Cancelar
+                </button>
+
+                <button class="btn-confirm"
+                        onclick="agregarProducto()">
+                    Agregar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
             <div class="dash-grid">
 
@@ -216,8 +350,13 @@ PRUEBAAAAA
                 <div class="card">
 
                     <div class="chart-label">
-                        Progreso prospectos de hoy
+                        Metas semáforo de vendedores
                     </div>
+                    <div class="barra-semaforo">
+
+    
+
+</div>
 
                     <div class="chart-box">
                         <canvas id="barChart"></canvas>
@@ -236,9 +375,9 @@ PRUEBAAAAA
 
                         <div class="stat-row">
                             <span>Semáforo de vendedores</span>
-                            <button class="btn-logout">
-                                Configurar
-                            </button>
+                            <button class="btn-logout" onclick="abrirSemaforo()">
+    Configurar
+</button>
                         </div>
 
                         <div class="stat-row">
@@ -300,6 +439,282 @@ function abrirModal() {
 function cerrarModal() {
     document.getElementById("logoutModal").classList.remove("show");
 }
+</script>
+<script>
+
+function abrirSemaforo(){
+    document
+        .getElementById("semaforoModal")
+        .classList.add("show");
+}
+
+function cerrarSemaforo(){
+    document
+        .getElementById("semaforoModal")
+        .classList.remove("show");
+}
+
+function aplicarSemaforo(){
+
+    const rojo =
+        parseInt(document.getElementById("valorRojo").value);
+
+    const amarillo =
+        parseInt(document.getElementById("valorAmarillo").value);
+
+    const verde =
+        parseInt(document.getElementById("valorVerde").value);
+
+    document.getElementById("rojoBar").style.width =
+        rojo + "%";
+
+    document.getElementById("amarilloBar").style.width =
+        amarillo + "%";
+
+    document.getElementById("verdeBar").style.width =
+        verde + "%";
+
+    document.getElementById("rojoBar").innerText = rojo;
+    document.getElementById("amarilloBar").innerText = amarillo;
+    document.getElementById("verdeBar").innerText = verde;
+
+    cerrarSemaforo();
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+let chart;
+
+const metas = {
+    minima: 20,
+    media: 50,
+    alta: 80
+};
+
+const ctx = document.getElementById('barChart');
+
+chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            'Meta mínima',
+            'Meta media',
+            'Meta alta'
+        ],
+        datasets: [{
+            data: [
+                metas.minima,
+                metas.media,
+                metas.alta
+            ],
+            backgroundColor: [
+                '#9b2020',
+                '#b89000',
+                '#2e6b2e'
+            ],
+            borderRadius: 8
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
+        }
+    }
+});
+
+function aplicarSemaforo(){
+
+    metas.minima =
+        parseInt(document.getElementById("valorRojo").value);
+
+    metas.media =
+        parseInt(document.getElementById("valorAmarillo").value);
+
+    metas.alta =
+        parseInt(document.getElementById("valorVerde").value);
+
+    chart.data.datasets[0].data = [
+        metas.minima,
+        metas.media,
+        metas.alta
+    ];
+
+    chart.update();
+
+    cerrarSemaforo();
+}
+
+</script>
+<div class="modal-overlay" id="semaforoModal">
+
+    <div class="modal-box semaforo-box">
+
+        <h3>Configurar Semáforo</h3>
+
+        <label>Meta mínima</label>
+        <input type="number" id="valorRojo" value="20">
+
+        <label>Meta media</label>
+        <input type="number" id="valorAmarillo" value="50">
+
+        <label>Meta alta</label>
+        <input type="number" id="valorVerde" value="80">
+
+        <div class="modal-btns">
+
+            <button onclick="cerrarSemaforo()">
+                Cancelar
+            </button>
+
+            <button class="btn-confirm" onclick="aplicarSemaforo()">
+                Aplicar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+const productos = [
+
+{
+    id:1,
+    nombre:"Preparación y Traslado",
+    descripcion:"Servicio de transporte",
+    valor:1300000,
+    tipo:"Servicio",
+    activo:true
+}
+
+];
+
+function mostrarProductos(){
+
+    document.querySelector(".dash-grid").style.display = "none";
+
+    document.querySelectorAll(".section").forEach(s => {
+        s.classList.remove("active");
+    });
+
+    document.getElementById("productosSection").classList.add("active");
+
+    renderProductos();
+}
+
+function renderProductos(){
+
+    const body =
+    document.getElementById("productosBody");
+
+    body.innerHTML="";
+
+    productos.forEach(producto=>{
+
+        body.innerHTML += `
+<tr>
+
+    <td>
+        <input type="radio"
+               name="productoSeleccionado"
+               value="${producto.id}">
+    </td>
+
+    <td>${producto.nombre}</td>
+
+    <td>${producto.descripcion}</td>
+
+    <td>$${producto.valor}</td>
+
+    <td>${producto.tipo}</td>
+
+    <td>
+        <span class="${
+            producto.activo
+            ? 'estado-activo'
+            : 'estado-inactivo'
+        }">
+
+            ${producto.activo ? 'Activo' : 'Inactivo'}
+
+        </span>
+    </td>
+
+</tr>
+`;
+
+    });
+
+}
+
+function mostrarCrearProducto(){
+
+    document.querySelectorAll(".section").forEach(s => {
+        s.classList.remove("active");
+    });
+
+    document.getElementById("crearProductoSection").classList.add("active");
+}
+
+function volverProductos(){
+
+    document.querySelectorAll(".section").forEach(s => {
+        s.classList.remove("active");
+    });
+
+    document.getElementById("productosSection").classList.add("active");
+}
+
+function agregarProducto(){
+
+    productos.push({
+
+        id:Date.now(),
+
+        nombre:
+        document.getElementById(
+            "nombreProducto"
+        ).value,
+
+        descripcion:
+        document.getElementById(
+            "descripcionProducto"
+        ).value,
+
+        valor:
+        document.getElementById(
+            "valorProducto"
+        ).value,
+
+        tipo:
+        document.getElementById(
+            "tipoProducto"
+        ).value,
+
+        activo:true
+
+    });
+
+    volverProductos();
+
+    renderProductos();
+}
+
 </script>
 </body>
 </html>
