@@ -10,10 +10,10 @@ $usuario = ['nombre' => 'Juanito Perez', 'rol' => 'administrador'];
 
 // ===== DATOS DE RENDIMIENTO (ejemplo) =====
 $rendimiento_vendedores = [
-    ['nombre' => 'Carlos López', 'ventas' => 45, 'prospectos' => 120, 'conversion' => 37.5, 'ingresos' => 67500],
-    ['nombre' => 'María García', 'ventas' => 38, 'prospectos' => 95, 'conversion' => 40.0, 'ingresos' => 57000],
-    ['nombre' => 'Pedro Martínez', 'ventas' => 52, 'prospectos' => 140, 'conversion' => 37.1, 'ingresos' => 78000],
-    ['nombre' => 'Ana Rodríguez', 'ventas' => 29, 'prospectos' => 85, 'conversion' => 34.1, 'ingresos' => 43500],
+    ['nombre' => 'Carlos López', 'ventas' => 45, 'prospectos' => 120,  'ingresos' => 67500],
+    ['nombre' => 'María García', 'ventas' => 38, 'prospectos' => 95,  'ingresos' => 57000],
+    ['nombre' => 'Pedro Martínez', 'ventas' => 52, 'prospectos' => 140, 'ingresos' => 78000],
+    ['nombre' => 'Ana Rodríguez', 'ventas' => 29, 'prospectos' => 85,  'ingresos' => 43500],
 ];
 
 $metricas_mensuales = [
@@ -25,7 +25,7 @@ $metricas_mensuales = [
 
 $total_ventas = array_sum(array_column($rendimiento_vendedores, 'ventas'));
 $total_ingresos = array_sum(array_column($rendimiento_vendedores, 'ingresos'));
-$promedio_conversion = round(array_sum(array_column($rendimiento_vendedores, 'conversion')) / count($rendimiento_vendedores), 1);
+
 
 // ===== INCLUIR HEADER =====
 include '../includes/header.php';
@@ -72,7 +72,7 @@ include '../includes/header.php';
           </div>
           <div class="stat-card">
             <div class="stat-icon yellow"><i class="fas fa-percentage"></i></div>
-            <div class="stat-value"><?= $promedio_conversion ?>%</div>
+        
             <div class="stat-label">Tasa Conversión</div>
           </div>
           <div class="stat-card">
@@ -111,7 +111,6 @@ include '../includes/header.php';
                   <th>Vendedor</th>
                   <th>Ventas</th>
                   <th>Prospectos</th>
-                  <th>Conversión</th>
                   <th>Ingresos</th>
                   <th>Rendimiento</th>
                 </tr>
@@ -136,7 +135,7 @@ include '../includes/header.php';
                   <td><strong><?= htmlspecialchars($r['nombre']) ?></strong></td>
                   <td><?= $r['ventas'] ?></td>
                   <td><?= $r['prospectos'] ?></td>
-                  <td><?= $r['conversion'] ?>%</td>
+                
                   <td>$<?= number_format($r['ingresos']) ?></td>
                   <td>
                     <span class="badge badge-<?= $rendimiento_class ?>">
